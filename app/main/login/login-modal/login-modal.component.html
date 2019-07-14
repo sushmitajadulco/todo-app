@@ -1,0 +1,24 @@
+<div class="sign-up-modal">
+  <h1 mat-dialog-title>Login</h1>
+  <div mat-dialog-content>
+    <form [formGroup]="loginFormGroup">
+      <mat-form-field>
+        <input matInput type="text" formControlName='username' name='username' placeholder="Username">
+        <mat-error *ngIf="loginFormGroup.get('username').hasError('required')">
+          Username is Required
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput type="password" formControlName='password' name='password' placeholder="Password">
+        <mat-error *ngIf="loginFormGroup.get('password').hasError('required')">
+          Password is Required
+        </mat-error>
+      </mat-form-field>
+
+    </form>
+  </div>
+  <button mat-flat-button color='primary' type='button' (click)="login()" [disabled]="loginFormGroup.invalid">
+    Login
+  </button>
+</div>

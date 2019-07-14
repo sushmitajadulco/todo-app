@@ -1,0 +1,21 @@
+
+
+
+
+
+<div *ngFor='let group of todoGroup'>
+  <mat-card class="group-card">
+    <mat-card-title>{{group.groupName}}</mat-card-title>
+    <mat-card-subtitle>
+      {{group.groupDescription}}
+    </mat-card-subtitle>
+    <div class="todo-list"*ngFor='let todo of group.todoList'>
+      <mat-card>
+        <mat-card-title appTodo [status]="todo.details.deadline"> {{todo.todoName}}</mat-card-title>
+        <mat-card-subtitle appTodo [status]="todo.details.deadline">
+          {{todo.details.description}}
+        </mat-card-subtitle>
+      </mat-card>
+    </div>
+  </mat-card>
+</div>

@@ -1,0 +1,32 @@
+<div class="sign-up-modal">
+  <h1 mat-dialog-title>Sign Up</h1>
+  <div mat-dialog-content>
+    <form [formGroup]="signUpUserFormGroup">
+      <mat-form-field>
+        <input matInput type="text" formControlName='username' name='username' placeholder="Username">
+        <mat-error *ngIf="signUpUserFormGroup.get('username').hasError('required')">
+          Username is required.
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="text" formControlName='firstName' name='firstName' placeholder="First name">
+        <mat-error *ngIf="signUpUserFormGroup.get('firstName').hasError('required')">
+          First name is required.
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="text" formControlName='lastName' name='lastName' placeholder="Last name">
+        <mat-error *ngIf="signUpUserFormGroup.get('lastName').hasError('required')">
+          Last name is required.
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="password" formControlName='password' name='password' placeholder="Password">
+        <mat-error *ngIf="signUpUserFormGroup.get('password').hasError('required')">
+            Password is required.
+        </mat-error>
+      </mat-form-field>
+    </form>
+  </div>
+  <button mat-flat-button color='primary' type='button' [disabled]="signUpUserFormGroup.invalid" (click)="signUp()">Sign Up</button>
+</div>

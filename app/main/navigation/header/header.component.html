@@ -1,0 +1,51 @@
+<header>
+  <mat-sidenav-container>
+    <mat-sidenav #sidenav role="navigation">
+      <!--this is a place for us to add side-nav code-->
+    </mat-sidenav>
+    <mat-sidenav-content>
+
+      <mat-toolbar color="primary">
+        <div fxHide.gt-xs>
+          <button mat-icon-button (click)="onToggleSidenav()">
+            <mat-icon>menu</mat-icon>
+          </button>
+        </div>
+        <div>
+
+          <div *ngIf='current_user; else home'>
+            <button mat-button (click)="goToDashboard()">
+              Dashboard
+            </button>
+          </div>
+          <ng-template #home>
+            <button mat-button (click)="goToDashboard()">
+              Home
+            </button>
+          </ng-template>
+
+        </div>
+        <div>
+          <button mat-button *ngIf="current_user" (click)="showProfile()">{{current_user.username}}</button>
+        </div>
+        <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
+          <div *ngIf="current_user; else login"><button mat-button (click)="logOut()">
+              Log out
+            </button></div>
+          <ng-template #login>
+            <ul fxLayout fxLayoutGap="15px" class="navigation-items">
+              <li>
+                <app-login></app-login>
+              </li>
+              <li>
+                <app-signup></app-signup>
+              </li>
+            </ul>
+          </ng-template>
+        </div>
+      </mat-toolbar>
+
+      <!--in here all the content must reside. We will add a navigation header as well-->
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</header>

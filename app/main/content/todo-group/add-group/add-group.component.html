@@ -1,0 +1,66 @@
+<div>
+  <h1 *ngIf="action == 'add'">Create Todo Group</h1>
+  <h1 *ngIf="action == 'edit'">Edit Todo Group</h1>
+</div>
+
+<div fxLayout fxLayout.xs="column" fxLayoutGap="10px" fxLayoutGap.xs="0">
+  <form *ngIf="todoGroup" [formGroup]="todoGroupForm" fxFlex="70%">
+    <div>
+      <mat-form-field>
+        <input matInput type="text" formControlName='groupName' name='groupName' placeholder="Group Name" />
+        <mat-error *ngIf="todoGroupForm.get('groupName').hasError('required')">
+          First name is required.
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <textarea matInput type="text" formControlName='groupDescription' name='groupDescription' placeholder="Group Description (optional)"></textarea>
+      </mat-form-field>
+    </div>
+    <div>
+      <h3>Todo List:</h3>
+    </div>
+
+
+    <div formArrayName="todoList" *ngFor="let todo of todoGroupForm.get('todoList').controls;
+                                                  let i = index, let last = last">
+      <ng-container [formGroupName]="i">
+        <div fxLayout fxLayout.xs="column" fxLayoutGap="100px" fxLayoutGap.xs="0" class="todo-list">
+          <div fxFlex="20%">
+            <mat-form-field>
+              <input matInput type="text" formControlName="todoName" placeholder="Todo Name" required />
+              <mat-error *ngIf="todo.get('todoName').errors?.required">
+                TodoName is required.
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+          <div fxLayout fxFlex="60%" fxLayout.xs="column">
+            <div formGroupName='details' fxLayoutGap="10px">
+              <mat-form-field fxFlex="50%">
+                <input matInput type="text" formControlName='description' name='description' placeholder="Description">
+              </mat-form-field>
+
+              <mat-form-field fxFlex="50%">
+                <input matInput type="date" formControlName='deadline' name='deadline' placeholder="Deadline"
+                  atp-time-picker>
+              </mat-form-field>
+            </div> <!-- details form group-->
+          </div>
+          <div fxFlex="20%">
+            <button mat-raised-button class="add-todo-options" *ngIf="last" (click)="addTodo()">
+              <span><i class="material-icons">add</i></span> Add Todo
+            </button>
+            <button mat-raised-button class="add-todo-options" *ngIf="!last" (click)="deleteTodo(i)">
+              <span><i class="material-icons">delete</i></span> Delete Todo
+            </button>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </form>
+</div>
+
+<button mat-flat-button color='primary' type='button' [disabled]="todoGroupForm.invalid" *ngIf="action == 'add'" (click)="addGroup('add')">Add Group</button>
+<button mat-flat-button color='primary' type='button'  [disabled]="todoGroupForm.invalid" *ngIf="action == 'edit'" (click)="addGroup('edit')">Edit Group</button>

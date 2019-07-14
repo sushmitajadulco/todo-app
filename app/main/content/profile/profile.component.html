@@ -1,0 +1,29 @@
+
+
+<div>
+  <h1>{{current_user.username}}: Profile</h1>
+</div>
+<div>
+    First Name: {{current_user.firstName}}
+</div>
+<div>
+    Last Name: {{current_user.lastName}}
+</div>
+
+<div class="list-head">
+  <h2>My List of Todo Groups</h2>
+  <button mat-raised-button color="primary" class="add-button" (click)="addGroup()">Add Group<mat-icon>add</mat-icon></button>
+</div>
+<div *ngFor='let group of todoGroupList'>
+      <mat-card class="group-card">
+        <div class="group-options">
+          <button mat-raised-button color="warn" (click)="deleteGroup(group.id)"><mat-icon>clear</mat-icon></button>
+          <button mat-raised-button (click)="editGroup(group.id)"><mat-icon>edit</mat-icon></button>
+        </div>
+        <mat-card-title>{{group.groupName}}</mat-card-title>
+        <mat-card-subtitle>
+          {{group.groupDescription}}
+        </mat-card-subtitle>
+        <button mat-stroked-button color="accent" (click)="showTodoList(group.id)">View todo list</button>
+      </mat-card>
+  </div>

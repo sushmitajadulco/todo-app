@@ -1,0 +1,39 @@
+<div *ngIf="current_user; else welcomde">
+  <h2>
+    Upcoming Todo
+  </h2>
+  <div *ngFor="let todo of todoList">
+    <ul *ngIf="isUpcoming(todo.details.deadline)">
+      <li appTodo [status]="todo.details.deadline" *ngIf="todo.todoName && todo.Name !==''  ">{{todo.todoName}}</li>
+      <ul>
+        <li appTodo [status]="todo.details.deadline" *ngIf="todo.details.description && todo.name !==''">Description:
+          {{todo.details.description}}</li>
+        <li appTodo [status]="todo.details.deadline" *ngIf="todo.details.status && todo.details.status !==''">Status:
+          {{todo.details.status}}</li>
+        <li appTodo [status]="todo.details.deadline" *ngIf="todo.details.deadline && todo.details.deadline !==''">
+          Deadline: {{todo.details.deadline | todoPipe}}</li>
+      </ul>
+   <!-- <button (click)="setDone(i)" *ngIf="todo.details.status === 'New'">done</button>
+   --> </ul> 
+  </div>
+  <h2>
+    Due Todo
+  </h2>
+  <div *ngFor="let todo of todoList">
+    <ul *ngIf="isDue(todo.details.deadline)">
+      <li appTodo [status]="todo.details.deadline" *ngIf="todo.todoName && todo.Name !==''  ">{{todo.todoName}}</li>
+      <ul>
+        <li appTodo [status]="todo.details.deadline" *ngIf="todo.details.description && todo.name !==''">Description:
+          {{todo.details.description}}</li>
+        <li appTodo [status]="todo.details.deadline" *ngIf="todo.details.status && todo.details.status !==''">Status:
+          {{todo.details.status}}</li>
+        <li appTodo [status]="todo.details.deadline" *ngIf="todo.details.deadline && todo.details.deadline !==''">
+          Deadline: {{todo.details.deadline | todoPipe}}</li>
+      </ul>
+   <!-- <button (click)="setDone(i)" *ngIf="todo.details.status === 'New'">done</button>
+   --> </ul> 
+  </div>
+</div>
+<ng-template #welcome>
+  <h2>Welcome to TodoApp</h2>
+</ng-template>

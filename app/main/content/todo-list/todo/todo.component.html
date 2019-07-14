@@ -1,0 +1,24 @@
+<form class="example-form" [formGroup]='todoForm'>
+  <mat-form-field class="example-container">
+    <label>Name:</label>
+    <input matInput type="text" formControlName='todoName'  name='name'> <br />
+  </mat-form-field>
+
+  <div formGroupName='details'>
+    <h3>Todo Details:</h3>
+
+    <mat-form-field class="example-container">
+      <label>Description:</label>
+      <input matInput type="text" formControlName='description' name='description'>
+      <br />
+    </mat-form-field>
+
+    <mat-form-field class="example-container">
+      <label>Deadline:</label>
+      <input matInput type="date" formControlName='deadline' name='deadline'> <br />
+    </mat-form-field>
+  </div>
+
+  <button mat-flat-button color='primary' (click)="cancel()">Cancel</button>
+  <button mat-flat-button color='primary' type='button' (click)="add()">Add</button>
+</form>

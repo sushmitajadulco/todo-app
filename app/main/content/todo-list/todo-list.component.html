@@ -1,0 +1,16 @@
+<div *ngFor="let todo of todoList, let i=index">
+  <ul >
+    <li appTodo [status]="todo.details.status" *ngIf="todo.name && todo.name !==''">{{todo.name}}</li>
+    <ul>
+      <li appTodo [status]="todo.details.status" *ngIf="todo.details.description && todo.name !==''">Description: {{todo.details.description}}</li>
+      <li appTodo [status]="todo.details.status" *ngIf="todo.details.status && todo.details.status !==''">Status: {{todo.details.status}}</li>
+      <li appTodo [status]="todo.details.status" *ngIf="todo.details.dateCompleted && todo.details.dateCompleted !==''">Completed: {{todo.details.dateCompleted | date: 'MM/dd/yyyy' }}</li>
+      <li appTodo [status]="todo.details.status" 
+      *ngIf="todo.details.deadline && todo.details.deadline !==''">
+      Deadline: {{todo.details.deadline | todoPipe}}</li>
+    </ul>
+    <button (click)="setDone(i)" *ngIf="todo.details.status === 'New'" >done</button>
+  </ul>
+</div>
+
+<button (click)="addTodo()">add todo</button>

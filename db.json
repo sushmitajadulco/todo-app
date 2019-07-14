@@ -1,0 +1,203 @@
+{
+  "todoGroup": [
+    {
+      "groupName": "group2",
+      "groupDescription": "group",
+      "user_id": "3",
+      "todoList": [
+        {
+          "todoName": "todo1",
+          "details": {
+            "description": "todo1",
+            "status": "New",
+            "deadline": "2019-02-28"
+          }
+        },
+        {
+          "todoName": "todo2",
+          "details": {
+            "description": "todo2",
+            "status": "New",
+            "deadline": "2019-02-28"
+          }
+        }
+      ],
+      "id": 2
+    },
+    {
+      "groupName": "group",
+      "groupDescription": "group",
+      "user_id": "3",
+      "todoList": [
+        {
+          "todoName": "todo",
+          "details": {
+            "description": "todo",
+            "status": "New",
+            "deadline": "2019-02-28"
+          }
+        },
+        {
+          "todoName": "todo2",
+          "details": {
+            "description": "todo2",
+            "status": "New",
+            "deadline": "2019-02-21"
+          }
+        }
+      ],
+      "id": 3
+    },
+    {
+      "groupName": "group3",
+      "groupDescription": "group",
+      "user_id": "3",
+      "todoList": [
+        {
+          "todoName": "todo",
+          "details": {
+            "description": "todo",
+            "status": "New",
+            "deadline": "2019-02-28"
+          }
+        }
+      ],
+      "id": 4
+    },
+    {
+      "groupName": "group4",
+      "groupDescription": "group",
+      "user_id": "3",
+      "todoList": [
+        {
+          "todoName": "todo1",
+          "details": {
+            "description": "todo1",
+            "status": "New",
+            "deadline": "2019-02-28"
+          }
+        },
+        {
+          "todoName": "todo2",
+          "details": {
+            "description": "todo2",
+            "status": "New",
+            "deadline": "2019-02-28"
+          }
+        }
+      ],
+      "id": 5
+    },
+    {
+      "groupName": "group1",
+      "groupDescription": "this group",
+      "user_id": "5",
+      "todoList": [
+        {
+          "todoName": "todo",
+          "details": {
+            "description": "todo",
+            "status": "New",
+            "deadline": "2019-02-21"
+          }
+        },
+        {
+          "todoName": "todo 2",
+          "details": {
+            "description": "todo 2",
+            "status": "New",
+            "deadline": "2019-02-28"
+          }
+        }
+      ],
+      "id": 7
+    },
+    {
+      "groupName": "group",
+      "groupDescription": "group",
+      "user_id": "4",
+      "todoList": [
+        {
+          "todoName": "todo",
+          "details": {
+            "description": "tdo",
+            "status": "New",
+            "deadline": "2019-03-01"
+          }
+        },
+        {
+          "todoName": "todo2",
+          "details": {
+            "description": "todo",
+            "status": "New",
+            "deadline": "2019-02-28"
+          }
+        }
+      ],
+      "id": 9
+    },
+    {
+      "groupName": "group",
+      "groupDescription": "group",
+      "user_id": "4",
+      "todoList": [
+        {
+          "todoName": "todo",
+          "details": {
+            "description": "todo",
+            "status": "New",
+            "deadline": "2019-03-02"
+          }
+        }
+      ],
+      "id": 10
+    },
+    {
+      "groupName": "group",
+      "groupDescription": "group",
+      "user_id": "4",
+      "todoList": [
+        {
+          "todoName": "todo1",
+          "details": {
+            "description": "todo2",
+            "status": "New",
+            "deadline": "2019-02-28"
+          }
+        }
+      ],
+      "id": 11
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "password": "password",
+      "username": "sushmita"
+    },
+    {
+      "id": 2,
+      "password": "password",
+      "username": "sushmita2"
+    },
+    {
+      "username": "bea",
+      "password": "password",
+      "id": 3
+    },
+    {
+      "username": "sushi",
+      "firstName": "Sushmita",
+      "lastName": "Jadulco",
+      "password": "password",
+      "id": 4
+    },
+    {
+      "username": "sushimi",
+      "firstName": "Sushmita",
+      "lastName": "Jadulco",
+      "password": "password",
+      "id": 5
+    }
+  ]
+}
